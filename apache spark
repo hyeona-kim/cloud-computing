@@ -1,0 +1,24 @@
+spark 설치를 위한 Java 설치 >> sudo apt-get install openjdk-8-jre -y
+1.과정에서 설치 파일 위치 못찾음 
+spark 설치를 위한 work 폴더를 생성 mkdir
+Java 위치를 work파일로 이동 >> Java_home설정 오류 ->일단 넘어감 
+
+http://spark.apache.org/downloads.html 에서 spark release 2.4.4 선택   #cd work
+spark-2.4.4-bin-hadoop2.7.taz Download 
+spark-2.4.4-bin-hadoop2.7의 압축풀기 
+tar xvf sprak-2.4.4-bin-hadoop2.7.tgz
+압축풀린 sprak-2.4.4-bin-hadoop2.7 폴더에 ln -s sprak-2.4.4-bin-hadoop2.7 spark 링크를 걸어준다
+PATH에 spark를 등록해준다 echo export PATH='$PATH':/usr/work/spark/bin >> ~/.bashrc
+vi ~/.bashrc 를 실행하여
+export PATH=$PATH:/usr/work/spark/bin
+export PATH+$PATH:/usr/ 를 입력한다.~/work/spark/bin 에서 ./pyspark 실행
+>> /home/hyeona/work/spark/bin/spark-class: line 71: /user/lib/jvm/java-8-openjdk-amd64/bin/java: No such file or directory 경로에 없다는것을 확인
+JAVA_HOME 설정오류로 JAVA_HOME주소찾기 echo $JAVA_HOME 입력 /user/lib/jvm/java-8-openjdk-amd64 으로 나옴
+ls  /user/lib/jvm/java-8-openjdk-amd64ls: cannot access '/user/lib/jvm/java-8-openjdk-amd64': No such file or directory 다시 오류
+/user/lib/jvm/java-8-openjdk-amd64/bin/java에서 /usr/lib/jvm/java-8-openjdk-amd64/jre으로 변경
+vi ~/.bashrc 에서 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre ->JAVA_HOME설정 해결
+source ~/.bashrc
+./pyspark 실행 
+spark 설치 
+
+
