@@ -19,6 +19,6 @@ ls  /user/lib/jvm/java-8-openjdk-amd64ls: cannot access '/user/lib/jvm/java-8-op
 vi ~/.bashrc 에서 export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/jre ->JAVA_HOME설정 해결
 source ~/.bashrc
 ./pyspark 실행 
-spark 설치 
+
 
 
